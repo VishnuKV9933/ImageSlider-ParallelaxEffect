@@ -14,22 +14,24 @@ function Slider() {
     // const j=-400
     const [i, setI] = useState(0);
     const [j, setJ] = useState(1);
+    const [k, setK] = useState(1);
   return (
     <div className='container'>
       
       <div className='slider'>
       {/* <img style={{ transform: `translateX(calc(105 * -${i}%)) translateZ(${j}px)` }} className='image1' src={image1} alt="" /> */}
-        <img style={{ transform: `translateX(calc(-405px + ${i}%))    translateZ(calc(200px * -${j}))` }} className='image1' src={image1} alt="" />
-        <img style={{ transform: `translateX(calc(-205px + ${i}%))    translateZ(calc(100px * -${j}))` }} className='image2' src={image2} alt="" />
-        <img style={{ transform: `translateX(calc(0px + ${i}%))     translateZ(calc(0px * ${j})) ` }}  className='image3' src={image3} alt="" />
-        <img style={{ transform: `translateX(calc(205px + ${i}%))     translateZ(calc(100px * -${j}))` }}  className='image4' src={image4} alt="" />
-        <img style={{ transform: `translateX(calc(405px + ${i}%))  translateZ(calc(200px * -${j}))` }}  className='image5' src={image5} alt="" />
+        <img style={{ transform: `translateX(calc(-405px + ${i}%))   translateZ(calc(50px * ${j} * ${k}))` }} className='image1' src={image1} alt="" />
+        <img style={{ transform: `translateX(calc(-205px + ${i}%))    translateZ(calc(100px * ${j} * ${k}))` }} className='image2' src={image2} alt="" />
+        <img style={{ transform: `translateX(calc(0px + ${i}%))     translateZ(calc(200px * ${j} * ${k})) ` }}  className='image3' src={image3} alt="" />
+        <img style={{ transform: `translateX(calc(205px + ${i}%))     translateZ(calc(100px * ${j} * ${k}))` }}  className='image4' src={image4} alt="" />
+        <img style={{ transform: `translateX(calc(405px + ${i}%))  translateZ(calc(50px * ${j} * ${k}))` }}  className='image5' src={image5} alt="" />
       </div>
       <div className='button-container'>
         <div
         onClick={()=>{
             setI(i-100)
             setJ(j-1)
+            setK(k+1)
         }}
         >
 <BiSolidLeftArrowSquare/>
@@ -38,6 +40,7 @@ function Slider() {
         onClick={()=>{
             setI(i+100)
             setJ(j+1)
+            setK(k-1)
         }}
         >
 
