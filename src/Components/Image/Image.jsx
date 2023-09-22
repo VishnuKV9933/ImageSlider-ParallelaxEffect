@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Image.css'
-function Image({image,right,left,index}) {
+function Image({image,right,left,index,speed}) {
 
 
 
@@ -41,7 +41,7 @@ function Image({image,right,left,index}) {
   return (
     
       
-    <div style={{ transform: `translateX(calc(${i}px )) translateZ(calc(${j}px  ))` }}  className='image'>
+    <div style={{ transform: `translateX(calc(${i}px )) translateZ(calc(${j}px  ))`,transition:`transform ${speed}s ease` }}  className='image'>
       <img className='image-size' src={image.src} alt="" />
     </div>
   );

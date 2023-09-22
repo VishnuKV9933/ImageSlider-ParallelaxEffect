@@ -24,8 +24,20 @@ function Slider() {
     const [left, setLeft] = useState('');
     const [leftBlock, setLeftBlock] = useState(2);
     const [rightBlock, setRightBlock] = useState(2);
+    const [speed,setSpeed]=useState(0.5)
 
-
+    const speedIncrease=()=>{
+        console.log(speed,'speed');
+        if(speed>0.5){
+            setSpeed(speed-0.5)
+            console.log(speed);
+        }
+    }
+    const speedDecrease=()=>{
+        if(speed<5){
+            setSpeed(speed+0.5)
+        }
+    }
  
     const MoveRight = () => {
 
@@ -67,7 +79,7 @@ function Slider() {
         imageArray.map((elem,index)=>{
             return(
   
-                <Image key={index} image={elem} right={right} left={left} index={index}/>
+                <Image key={index} image={elem} right={right} left={left} index={index} speed={speed}/>
                 )
             })
         }
@@ -78,6 +90,15 @@ function Slider() {
           <BiSolidLeftArrowSquare />
         </div>
         <div onClick={MoveRight}>
+          <BiSolidRightArrowSquare />
+        </div>
+      </div>
+      <div className='button-speed '>
+        <div onClick={speedDecrease}>
+          <BiSolidLeftArrowSquare />
+        </div>
+        Slider Speed
+        <div onClick={speedIncrease}>
           <BiSolidRightArrowSquare />
         </div>
       </div>
