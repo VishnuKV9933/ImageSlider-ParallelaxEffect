@@ -97,7 +97,10 @@ function Slider() {
         <div onClick={speedDecrease}>
           <BiSolidLeftArrowSquare />
         </div>
+        <div className='slider-text'>
         Slider Speed
+
+        </div>
         <div onClick={speedIncrease}>
           <BiSolidRightArrowSquare />
         </div>

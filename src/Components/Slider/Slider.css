@@ -37,7 +37,14 @@
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  color: rgb(15, 15, 88);
+  color: rgb(42, 42, 194);
+}
+
+.slider-text{
+  color: rgb(178, 178, 255);
+  font-size: 50px;
+  font-weight: 1000;
+  user-select: none;
 }
 
 .slider {
@@ -45,6 +52,20 @@
   height: 200px;
   position: relative;
   transform-style: preserve-3d;
+}
+
+@media (max-width:640px) {
+  .slider {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  .slider-text{
+    font-size: 20px;
+    font-weight: 1000;
+    user-select: none;
+  }
 }
 
 
