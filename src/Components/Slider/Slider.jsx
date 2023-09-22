@@ -11,7 +11,6 @@ import {BiSolidRightArrowSquare,BiSolidLeftArrowSquare} from 'react-icons/bi'
 import Image from '../Image/Image';
 
 function Slider() {
-   const currentref=useRef()
     const imageArray =[
 
         {src:image5,j:-400,i:-400},
@@ -23,26 +22,39 @@ function Slider() {
     ]
     const [right, setright] = useState('');
     const [left, setLeft] = useState('');
+    const [leftBlock, setLeftBlock] = useState(2);
+    const [rightBlock, setRightBlock] = useState(2);
+
 
  
     const MoveRight = () => {
 
+        if (rightBlock <= 5 && leftBlock > 0) {
         if(right=='changed'){
             setright('changeAgain')
         }else{
 
             setright('changed')
         }
-       
+            setRightBlock(rightBlock + 1);
+            setLeftBlock(leftBlock - 1);
+            console.log("block");
+          }
       };
 
       const Moveleft = () => {
-
+          
+          if(rightBlock>0 && leftBlock<=5){
         if(left=='changed'){
             setLeft('changeAgain')
         }else{
 
             setLeft('changed')
+        }
+
+
+            setRightBlock(rightBlock-1)
+            setLeftBlock(leftBlock+1)
         }
        
       };
@@ -51,12 +63,6 @@ function Slider() {
     <div className='container'>
       <div className='slider'>
 
-        {/* <img style={{ transform: `translateX(calc(-405px + ${i}%))   translateZ(calc(50px * ${j} * ${k}))` }} className='image1' src={image1} alt="" />
-        <img style={{ transform: `translateX(calc(-250px + ${i}%))    translateZ(calc(100px * ${j} * ${k}))` }} className='image2' src={image2} alt="" />
-        <img style={{ transform: `translateX(calc(0px + ${i}%))     translateZ(calc(200px * ${j} * ${k})) ` }}  className='image3' src={image3} alt="" />
-        <img style={{ transform: `translateX(calc(205px + ${i}%))     translateZ(calc(100px * ${j} * ${k}))` }}  className='image4' src={image4} alt="" />
-    <img style={{ transform: `translateX(calc(405px + ${i}%))  translateZ(calc(50px * ${j} * ${k}))` }}  className='image5' src={image5} alt="" /> */}
-    
     {
         imageArray.map((elem,index)=>{
             return(

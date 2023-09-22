@@ -1,4 +1,4 @@
-import React, { useEffect, useImperativeHandle, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Image.css'
 function Image({image,right,left,index}) {
 
@@ -11,12 +11,10 @@ function Image({image,right,left,index}) {
 
     useEffect(()=>{
         if(right){
-            console.log('right');
             setI(i+200)
-
           if(count >= mid){
             setJ(j-200)
-            console.log(j);
+          
           }else{
             setJ(j+200)
           }
@@ -26,17 +24,14 @@ function Image({image,right,left,index}) {
 
 
       useEffect(()=>{
-        if(left){
-            console.log('right');
-            
+        if(left){            
             if(count > mid){
                 setJ(j+200)
-                console.log(index);
+               
                 setI(i-200)
             }else{
                 setI(i-200)
               setJ(j-200)
-            //   console.log(j);
           }
             setCount(count-1)
         }
